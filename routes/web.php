@@ -22,7 +22,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'role:super-admin'], function() {
-   Route::get('/export', 'usersController@index')->name('index');
+   Route::get('/users', 'usersController@index')->name('index');
+   Route::get('/downloadPDF','usersController@downloadPDF');
+   Route::get('/downloadXLSX', 'usersController@downloadXLSX');
    Route::get('/menu1', function() {
       return 'Super Menu 1';
    });

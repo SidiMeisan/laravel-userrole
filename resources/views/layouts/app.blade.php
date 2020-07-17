@@ -50,6 +50,7 @@
                                 </li>
                             @endif
                         @else
+                            <!-- Navbar using role-->
                             @if(auth()->user()->hasRole() == 'super-admin')
                             <li class="nav-item">
                                 <a class="nav-link" href="{{url('/menu1')}}">1</a>
@@ -62,7 +63,7 @@
                             </li><li class="nav-item">
                                 <a class="nav-link" href="{{url('/menu5')}}">5</a>
                             </li><li class="nav-item">
-                                <a class="nav-link" href="{{url('/export')}}">User</a>
+                                <a class="nav-link" href="{{url('/users')}}">User</a>
                             </li>
                             @endif
                             @if(auth()->user()->hasRole() == 'admin')

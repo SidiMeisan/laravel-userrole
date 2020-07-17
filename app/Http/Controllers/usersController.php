@@ -4,7 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+
+
+// untuk export pdf
 use PDF;
+
+// untuk export excel
+use App\Exports\UsersExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class usersController extends Controller
 {
@@ -23,6 +30,8 @@ class usersController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    // Melihat Semua user
     public function index()
     {
         $AllUser = User::all();
@@ -30,10 +39,16 @@ class usersController extends Controller
         return view('user',['datas'=> $AllUser]);
     }
 
+    //untuk mendownload pdf
     public function downloadPDF() {
-        $show = User::all();
-        $pdf = PDF::loadView('pdf', compact('show'));
+        $datas = User::all();
+        $pdf = PDF::loadView('pdf', compact('datas'));
         
-        return $pdf->download('disney.pdf');
+        return $pdf->download('user.pdf');
+    }
+
+    //untuk mendownload pdf
+    public function downloadXLSX() {
+        return Excel::download(new UsersExport, 'users.xlsx');
     }
 }

@@ -26,6 +26,8 @@
                                 </tr>
                                 @endforeach
                             </tbody>
+                            <a class="btn btn-primary" href="{{action('usersController@downloadPDF')}}">Download PDF</a>
+                            <a class="btn btn-primary" href="{{action('usersController@downloadXLSX')}}">Download XLSX</a>
                         </table>
                     </div>
                 </div>

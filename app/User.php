@@ -37,7 +37,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    # Mengambil User Id 
+    # Mengambil jabatan user 
     public function hasRole()
     {
       return $this->jabatan;
