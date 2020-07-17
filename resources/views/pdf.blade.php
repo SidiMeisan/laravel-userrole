@@ -3,9 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <script src="js/print.js"></script>
   </head>
   <body>
     <table class="table table-bordered">
